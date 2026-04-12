@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: 3tier-app
+  name: fullstack-app
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/piyushsachdeva/gitops-manifest-awstf.git
+    repoURL: https://github.com/r94l/gitops-eks-configs.git
     targetRevision: main
-    path: 3tire-configs
+    path: manifests
   destination:
     server: https://kubernetes.default.svc
-    namespace: 3tirewebapp-dev
+    namespace: fullstack-prod
   syncPolicy:
     automated:
       prune: true

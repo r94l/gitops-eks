@@ -63,7 +63,7 @@ module "eks" {
   enable_cluster_creator_admin_permissions = true
 
   tags = {
-    Environment = "dev"
+    Environment = "Prod"
     Terraform   = "true"
   }
 }
@@ -85,7 +85,7 @@ module "ebs_csi_driver_irsa" {
   }
 
   tags = {
-    Environment = "dev"
+    Environment = "Prod"
     Terraform   = "true"
   }
 }
@@ -97,7 +97,7 @@ resource "aws_eks_addon" "ebs_csi_driver" {
   service_account_role_arn = module.ebs_csi_driver_irsa.iam_role_arn
 
   tags = {
-    Environment = "dev"
+    Environment = "Prod"
     Terraform   = "true"
   }
 }

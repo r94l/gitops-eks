@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: 3tirewebapp-dev
+namespace: fullstack-prod
 
 resources:
   - namespace.yaml
@@ -14,9 +14,9 @@ commonAnnotations:
   app.kubernetes.io/version: "1.0"
 
 images:
-  - name: itsbaivab/frontend
+  - name: piyushsachdeva/frontend
     newTag: v2
-  - name: itsbaivab/backend
+  - name: piyushsachdeva/backend
     newTag: latest
   - name: postgres
     newTag: "15"
