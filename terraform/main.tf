@@ -117,12 +117,14 @@ data "http" "argocd_manifest" {
 }
 
 resource "kubectl_manifest" "argocd" {
-  for_each = { for doc in split("---", data.http.argocd_manifest.response_body) : 
-    sha256(doc) => doc if trimspace(doc) != "" 
+  for_each = { for doc in split("---", data.http.argocd_manifest.response_body) :
+    sha256(doc) => doc if trimspace(doc) != ""
   }
 
-  yaml_body = each.value
+  yaml_body          = each.value
   override_namespace = "argocd"
+  server_side_apply  = true   # ← add this
+  force_conflicts    = true
 
   depends_on = [kubernetes_namespace_v1.argocd]
 }
@@ -150,7 +152,7 @@ resource "null_resource" "patch_argocd_service" {
 # The namespace is created by ArgoCD from the GitOps repository
 # resource "kubernetes_namespace_v1" "app" {
 #   metadata {
-#     name = "3tirewebapp-dev"
+#     name = "fullstack-prod"
 #   }
 #   depends_on = [module.eks]
 # }
