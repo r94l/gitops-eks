@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: itsbaivab/frontend
+          image: piyushsachdeva/frontend
           ports:
             - containerPort: 3000
           env:
