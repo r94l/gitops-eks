@@ -1,4 +1,4 @@
-# Day 29: GitOps with ArgoCD in EKS Cluster with Kustomize
+GitOps with ArgoCD in EKS Cluster with Kustomize
 
 This project demonstrates a complete GitOps workflow using ArgoCD and Kustomize to deploy a 3-tier web application on AWS EKS.
 
