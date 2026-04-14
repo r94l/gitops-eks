@@ -1,6 +1,6 @@
 # GitOps with ArgoCD on Amazon EKS
 
-A complete GitOps implementation deploying a **three-tier web application** to **Amazon EKS** using **ArgoCD** for continuous delivery, **Kustomize** for manifest management, and **Terraform** for full infrastructure provisioning. Git is the single source of truth — any change pushed to the manifests is automatically detected by ArgoCD and applied to the cluster.
+A complete GitOps implementation deploying a **three-tier web application** to **Amazon EKS** using **ArgoCD** for continuous delivery, **Kustomize** for manifest management, and **Terraform** for full infrastructure provisioning. Git is the single source of truth and any change pushed to the manifests is automatically detected by ArgoCD and applied to the cluster.
 
 ---
 
@@ -442,4 +442,4 @@ terraform destroy
 
 ---
 
-*Built to demonstrate a production-pattern GitOps workflow on AWS — three-tier application delivery with ArgoCD, Kustomize, and Terraform-provisioned EKS.*
+*Built to demonstrate a production-pattern GitOps workflow on AWS: Three-tier application delivery with ArgoCD, Kustomize, and Terraform-provisioned EKS.*
